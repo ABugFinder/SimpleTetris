@@ -16,15 +16,15 @@ function arenaSweep() {
         arena.unshift(row);
         ++y;
 
-        player.score += rowCount * 10;
-        rowCount *= 2;
+        player.score += rowCount * 117;
+        rowCount *= 17;
     }
 }
 
 const matrix = [
   [0, 0, 0],
-  [1, 1, 1],
-  [0, 1, 0],
+  [0, 0, 0],
+  [0, 0, 0],
 ];
 
 function collide(arena, player) {
@@ -95,8 +95,9 @@ function createMatrix(w, h) {
 
 function draw() {
 
-    context.fillStyle = '#000';
+    context.fillStyle = '#fff';
     context.fillRect(0, 0, canvas.width, canvas.height);
+      
 
     drawMatrix(arena, {x: 0, y: 0});
     drawMatrix(player.matrix, player.pos);
@@ -112,14 +113,27 @@ function merge(arena, player) {
     });
 }
 
+function randSimb() {
+    let randS = simbols[simbols.length * Math.random() | 0];
+    return randS;
+}
+
 function drawMatrix(matrix, offset) {
+    //randColor = Math.random() * (0 - min) + min;
+
     matrix.forEach((row, y) => {
         row.forEach((value, x) => {
             if (value !== 0) {
+
                 context.fillStyle = colors[value];
+                //context.fillStyle = colors[value * Math.random() | 0];// epilepsia mode
                 context.fillRect(x + offset.x,
                     y + offset.y,
                     1, 1);
+
+                context.fillStyle = 'black';
+                context.font = "1px sans-serif";
+                context.fillText(simbols[value], (x+.12) + offset.x, (y+.88) + offset.y);
             }
         });
     });
@@ -127,6 +141,7 @@ function drawMatrix(matrix, offset) {
 
 function playerDrop() {
     player.pos.y++;
+
     if (collide(arena, player)) {
         player.pos.y--;
 
@@ -147,6 +162,7 @@ function playerMove(dir) {
     }
 }
 
+// Probar imitar esta logica para asiganar un elemento al azar
 function playerReset() {
     const pieces = 'ILJOTSZ';
     player.matrix = createPiece(pieces[pieces.length * Math.random() | 0]);
@@ -197,7 +213,7 @@ function rotate(matrix, dir) {
 }
 
 let dropCounter = 0;
-let dropInterval = 500;
+let dropInterval = 300;
 let lastTime = 0;
 
 function update(time = 0) {
@@ -229,7 +245,11 @@ const colors = [
     '#3877FF',
 ];
 
-const arena = createMatrix(24, 20);
+const simbols = [
+    'H', 'He', 'Li', 'Be', 'B', 'C', 'N', 'O', 'F',
+];
+
+const arena = createMatrix(12, 20);
 
 const player = {
     pos: {x: (arena[0].length / 2 | 0) - (matrix[0].length / 2 | 0), y: 0},
