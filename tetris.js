@@ -1,7 +1,7 @@
 const canvas = document.getElementById('tetris');
 const context = canvas.getContext('2d');
 
-context.scale(20, 20);
+context.scale(25, 25);
 
 function arenaSweep() {
     let rowCount = 1;
@@ -129,7 +129,9 @@ function playerDrop() {
     player.pos.y++;
     if (collide(arena, player)) {
         player.pos.y--;
+
         merge(arena, player);
+
         player.pos.y = 0;
         playerReset();
         arenaSweep();
@@ -195,7 +197,7 @@ function rotate(matrix, dir) {
 }
 
 let dropCounter = 0;
-let dropInterval = 1000;
+let dropInterval = 500;
 let lastTime = 0;
 
 function update(time = 0) {
@@ -227,7 +229,7 @@ const colors = [
     '#3877FF',
 ];
 
-const arena = createMatrix(24, 40);
+const arena = createMatrix(24, 20);
 
 const player = {
     pos: {x: (arena[0].length / 2 | 0) - (matrix[0].length / 2 | 0), y: 0},
