@@ -1,13 +1,25 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
-    <list default="true" id="c6bafa91-17f4-465d-afb2-d78c0b4f1649" name="Default Changelist" comment="" />
+    <list default="true" id="dfd15215-6f6b-4caa-9131-9c65fafacba8" name="Default Changelist" comment="">
+      <change afterPath="$PROJECT_DIR$/.idea/SimpleTetris.iml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/.idea/vcs.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/Tetris.iml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/modules.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/modules.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/index.html" beforeDir="false" afterPath="$PROJECT_DIR$/index.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/tetris.js" beforeDir="false" afterPath="$PROJECT_DIR$/tetris.js" afterDir="false" />
+    </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
     <option name="LAST_RESOLUTION" value="IGNORE" />
   </component>
-  <component name="ProjectId" id="1YaNbRV75KDpkvggkApijPb3Rxn" />
+  <component name="Git.Settings">
+    <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
+  </component>
+  <component name="ProjectId" id="1YatCKTPfMJUk0PdGffKbjhPJZV" />
+  <component name="ProjectLevelVcsManager" settingsEditedManually="true" />
   <component name="ProjectViewState">
     <option name="hideEmptyMiddlePackages" value="true" />
     <option name="showExcludedFiles" value="true" />
@@ -15,20 +27,22 @@
   </component>
   <component name="PropertiesComponent">
     <property name="RunOnceActivity.ShowReadmeOnStart" value="true" />
+    <property name="SHARE_PROJECT_CONFIGURATION_FILES" value="true" />
     <property name="WebServerToolWindowFactoryState" value="false" />
     <property name="last_opened_file_path" value="$PROJECT_DIR$" />
+    <property name="settings.editor.selected.configurable" value="editor.preferences.fonts.default" />
   </component>
   <component name="SvnConfiguration">
     <configuration />
   </component>
   <component name="TaskManager">
     <task active="true" id="Default" summary="Default task">
-      <changelist id="c6bafa91-17f4-465d-afb2-d78c0b4f1649" name="Default Changelist" comment="" />
-      <created>1583176815984</created>
+      <changelist id="dfd15215-6f6b-4caa-9131-9c65fafacba8" name="Default Changelist" comment="" />
+      <created>1583192403716</created>
       <option name="number" value="Default" />
       <option name="presentableId" value="Default" />
-      <updated>1583176815984</updated>
-      <workItem from="1583176819816" duration="7840000" />
+      <updated>1583192403716</updated>
+      <workItem from="1583192407902" duration="4391000" />
     </task>
     <servers />
   </component>
@@ -36,9 +50,9 @@
     <option name="version" value="1" />
   </component>
   <component name="WindowStateProjectService">
-    <state x="625" y="238" width="670" height="676" key="search.everywhere.popup" timestamp="1583178403493">
-      <screen x="0" y="23" width="1920" height="977" />
+    <state x="764" y="260" key="SettingsEditor" timestamp="1583192542903">
+      <screen x="0" y="0" width="1920" height="1080" />
     </state>
-    <state x="625" y="238" width="670" height="676" key="search.everywhere.popup/0.23.1920.977@0.23.1920.977" timestamp="1583178403493" />
+    <state x="764" y="260" key="SettingsEditor/0.0.1920.1080/1920.0.1920.1080/3840.0.1920.1080@0.0.1920.1080" timestamp="1583192542903" />
   </component>
 </project>
