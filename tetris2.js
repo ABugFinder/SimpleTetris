@@ -53,7 +53,12 @@ function randomPiece(){
     let r = randomN = Math.floor(Math.random() * PIECES.length) // 0 -> 6
     return new Piece( PIECES[r][0],PIECES[r][1]);
 }
+ //TODO: CREAR un metodo que genere un arreglo de piezas aleatorias
 
+ //TODO: Crear un método pila para recorrer pieza actual y pieza siguiente
+
+ //TODO: Crear metdo para mostrar cual es la pieza siguiente (Incluso probar mostrar las siguientes tres).
+ 
 let p = randomPiece();
 
 // The Object Piece
