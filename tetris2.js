@@ -148,6 +148,14 @@ Piece.prototype.rotate = function(){
 }
 
 let score = 0;
+const alerChido = () => Swal.fire({
+    title: 'Fin del juego!',
+    text: '¿Terminar partida?',
+    icon: 'error',
+    confirmButtonText: '¡Terminar!'
+  }).then(function() {
+    window.location = "file:///Applications/MAMP/htdocs/SimpleTetris/index2.html";
+});
 
 Piece.prototype.lock = function(){
     for( r = 0; r < this.activeTetromino.length; r++){
@@ -158,7 +166,8 @@ Piece.prototype.lock = function(){
             }
             // pieces to lock on top = game over
             if(this.y + r < 0){
-                alert("Game Over");
+                //alert("Game Over");
+                alerChido();
                 // stop request animation frame
                 gameOver = true;
                 break;
@@ -231,13 +240,13 @@ document.addEventListener("keydown",CONTROL);
 function CONTROL(event){
     if(event.keyCode == 37 || event.keyCode == 65){
         p.moveLeft();
-        dropStart = Date.now();
+        //dropStart = Date.now();
     }else if(event.keyCode == 38 || event.keyCode == 81 || event.keyCode == 69){
         p.rotate();
-        dropStart = Date.now();
+        //dropStart = Date.now();
     }else if(event.keyCode == 39 || event.keyCode == 68){
         p.moveRight();
-        dropStart = Date.now();
+        //dropStart = Date.now();
     }else if(event.keyCode == 40 || event.keyCode == 83){
         p.moveDown();
     }
@@ -254,36 +263,51 @@ function drop(){
     console.log(delta);
 
     if (score < 200) {
-        if(delta > 750){
+        if(delta > 650){
             p.moveDown();
             dropStart = Date.now();
             // update the score
             levelElement.innerHTML = 1;
         }
     }
-    if (score >= 200 && score < 600) {
-        
-        if (delta > 250) {
+    if (score >= 200 && score < 1000) {
+        if (delta > 350) {
             p.moveDown();
             dropStart = Date.now();
             // update the score
             levelElement.innerHTML = 2;
         }
     }
-    if (score >= 600 && score < 1000) {
+    if (score >= 1000 && score < 2000) {
         
-        if (delta > 200) {
+        if (delta > 250) {
             p.moveDown();
             dropStart = Date.now();
             levelElement.innerHTML = 3;
         }
     }
-    if (score >= 1000) {
+    if (score >= 2000 && score < 3000) {
+        
+        if (delta > 200) {
+            p.moveDown();
+            dropStart = Date.now();
+            levelElement.innerHTML = 4;
+        }
+    }
+    if (score >= 3000 && score < 4000) {
         
         if (delta > 150) {
             p.moveDown();
             dropStart = Date.now();
-            levelElement.innerHTML = 4;
+            levelElement.innerHTML = 5;
+        }
+    }
+    if (score >= 4000) {
+        
+        if (delta > 100) {
+            p.moveDown();
+            dropStart = Date.now();
+            levelElement.innerHTML = 6;
         }
     }
 
