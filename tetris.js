@@ -17,7 +17,7 @@ function arenaSweep() {
         ++y;
 
         player.score += rowCount * 117;
-        rowCount *= 17;
+        rowCount *= 2;
     }
 }
 
@@ -127,13 +127,15 @@ function drawMatrix(matrix, offset) {
 
                 context.fillStyle = colors[value];
                 //context.fillStyle = colors[value * Math.random() | 0];// epilepsia mode
+                
                 context.fillRect(x + offset.x,
                     y + offset.y,
                     1, 1);
-
+                context.strokeStyle='red';
+                /*
                 context.fillStyle = 'black';
                 context.font = "1px sans-serif";
-                context.fillText(simbols[value], (x+.12) + offset.x, (y+.88) + offset.y);
+                context.fillText(simbols[value], (x+.12) + offset.x, (y+.88) + offset.y);*/
             }
         });
     });
@@ -249,7 +251,7 @@ const simbols = [
     'H', 'He', 'Li', 'Be', 'B', 'C', 'N', 'O', 'F',
 ];
 
-const arena = createMatrix(12, 20);
+const arena = createMatrix(12, 18);
 
 const player = {
     pos: {x: (arena[0].length / 2 | 0) - (matrix[0].length / 2 | 0), y: 0},
