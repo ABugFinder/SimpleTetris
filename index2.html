@@ -1,113 +1,121 @@
-<html>
-<head>
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Tetris Game JS</title>
     <style>
-        #score{
-            display: inline-block;
-        }
-        #level{
-            display: inline-block;
-        }
-        body {
-            background: #9f9fb1;
-            color: #000;
-            font-family: sans-serif;
-            font-size: 2em;
-            text-align: center;
-        }
-        canvas {
-            border: solid .1em #fff;
-            height: 90vh;
-        }
+      #score {
+        display: inline-block;
+      }
+      #level {
+        display: inline-block;
+      }
+      body {
+        background: #9f9fb1;
+        color: #000;
+        font-family: sans-serif;
+        font-size: 2em;
+        text-align: center;
+      }
+      canvas {
+        border: solid 0.1em #fff;
+        height: 90vh;
+      }
 
-        .container{
-            display: grid;
-            grid-template-columns: 33% 33% 33%;
-        }
+      .container {
+        display: grid;
+        grid-template-columns: 33% 33% 33%;
+      }
 
-        .box{
-            text-align: center;
-            color: aliceblue;
-        }
-        .posLeft{
-            float: left;
-        }
-        .posRight{
-            float: right;
-        }
-        .espacio{
-            padding-top: 30px;
-        }
-        .caja{
-            border-style: solid;
-        }
-        .ajustarCaja{
-            width: 30%;
-            margin: auto;
-        }
+      .box {
+        text-align: center;
+        color: aliceblue;
+      }
+      .posLeft {
+        float: left;
+      }
+      .posRight {
+        float: right;
+      }
+      .espacio {
+        padding-top: 30px;
+      }
+      .caja {
+        border-style: solid;
+      }
+      .ajustarCaja {
+        width: 30%;
+        margin: auto;
+      }
     </style>
-</head>
-<body>
-
+  </head>
+  <body>
     <div class="container">
-        <div class="box">Elementos
-            <br>
-            <div class="box caja ajustarCaja">
-                Hidrogeno <br>
-                H <br>
-                MM <br>
-            </div>
-            <br>    
-            <div class="box caja ajustarCaja">
-                Helio <br>
-                He <br>
-                MM <br>
-            </div>
-            <br>
-            <div class="box caja ajustarCaja">
-                Sodio <br>
-                Sd <br>
-                MM <br>
-            </div>
-            <br>    
-            <div class="box caja ajustarCaja">
-                Mercurio <br>
-                Mg <br>
-                MM <br>
-            </div>
+      <div class="box">
+        Elementos
+        <br />
+        <div class="box caja ajustarCaja">
+          Hidrogeno <br />
+          H <br />
+          MM <br />
         </div>
-
-        <canvas class="box" id="tetris" width="250" height="425"></canvas>
-        
-        <div class="box">Datos
-            <div class="box espacio">
-                Puntuanción: <div id="score">0</div>
-            </div>
-            <div class="box espacio">
-                Nivel: <div id="level">0</div>
-            </div>
-            <div class="box espacio">
-                Dificultad: <div id=""></div>
-            </div>
-            <div class="box espacio">
-                Modo de juego: <div id=""></div>
-            </div>
-            <div class="box espacio">
-                Puntos para siguiente Nivel: <div id=""></div>
-            </div>
-            <div class="box espacio">
-                Puntos para siguiente Elemento: <div id=""></div>
-            </div>
+        <br />
+        <div class="box caja ajustarCaja">
+          Helio <br />
+          He <br />
+          MM <br />
         </div>
-        
+        <br />
+        <div class="box caja ajustarCaja">
+          Sodio <br />
+          Sd <br />
+          MM <br />
+        </div>
+        <br />
+        <div class="box caja ajustarCaja">
+          Mercurio <br />
+          Mg <br />
+          MM <br />
+        </div>
+      </div>
 
+      <canvas class="box" id="tetris" width="250" height="425"></canvas>
+
+      <div class="box">
+        Datos
+        <div class="box espacio">
+          Puntuanción:
+          <div id="score">0</div>
+        </div>
+        <div class="box espacio">
+          Nivel:
+          <div id="level">0</div>
+        </div>
+        <div class="box espacio">
+          Dificultad:
+          <div id=""></div>
+        </div>
+        <div class="box espacio">
+          Modo de juego:
+          <div id=""></div>
+        </div>
+        <div class="box espacio">
+          Puntos para siguiente Nivel:
+          <div id=""></div>
+        </div>
+        <div class="box espacio">
+          Puntos para siguiente Elemento:
+          <div id=""></div>
+        </div>
+      </div>
     </div>
-    
+
     <script src="tetrominoes.js"></script>
     <script src="tetris2.js"></script>
     <script src="https://cdn.jsdelivr.net/npm/sweetalert2@9"></script>
     <script src="sweetalert2.all.min.js"></script>
     <!-- Optional: include a polyfill for ES6 Promises for IE11 -->
     <script src="https://cdn.jsdelivr.net/npm/promise-polyfill"></script>
-</body>
+  </body>
 </html>
