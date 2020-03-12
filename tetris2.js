@@ -2,6 +2,7 @@ const cvs = document.getElementById("tetris");
 const ctx = cvs.getContext("2d");
 const scoreElement = document.getElementById("score");
 const levelElement = document.getElementById("level");
+const nextPieceElement = document.getElementById("nextPiece");
 
 //TODO: Crear objeto json de elemento  (nombre y simbolo)
 //TODO: Crear arreglo de objetos elementos
@@ -59,6 +60,18 @@ function randomPiece() {
   let r = (randomN = Math.floor(Math.random() * PIECES.length)); // 0 -> 6
   return new Piece(PIECES[r][0], PIECES[r][1]);
 }
+
+var arreglo = [];
+
+function generarCargador(){
+    for (let index = 0; index < 499; index++) {
+        arreglo.push(randomPiece());
+    }
+    //console.log(arreglo);
+}
+
+generarCargador();
+
 //TODO: CREAR un metodo que genere un arreglo de piezas aleatorias
 
 //TODO: Crear un método pila para recorrer pieza actual y pieza siguiente
@@ -103,6 +116,8 @@ Piece.prototype.unDraw = function() {
 };
 
 // move Down the piece
+var cont = 0;
+console.log(arreglo);
 Piece.prototype.moveDown = function() {
   if (!this.collision(0, 1, this.activeTetromino)) {
     this.unDraw();
@@ -111,7 +126,9 @@ Piece.prototype.moveDown = function() {
   } else {
     // we lock the piece and generate a new one
     this.lock();
-    p = randomPiece();
+    //p = randomPiece();
+    cont++;
+    p = arreglo[cont];
   }
 };
 
@@ -168,8 +185,8 @@ const alerChido = () =>
     confirmButtonText: "¡Terminar!"
   }).then(function() {
     window.location =
-      //"file:///Applications/MAMP/htdocs/SimpleTetris/index2.html";
-      "file:///C:/wamp64/www/SimpleTetris/index2.html";
+      "file:///Applications/MAMP/htdocs/SimpleTetris/index2.html";
+      //"file:///C:/wamp64/www/SimpleTetris/index2.html";
   });
 
 Piece.prototype.lock = function() {
@@ -277,7 +294,7 @@ function drop() {
   let now = Date.now();
   let delta = now - dropStart;
 
-  console.log(delta);
+  //console.log(delta);
 
   if (score < 200) {
     if (delta > 650) {
