@@ -61,22 +61,17 @@ function randomPiece() {
   return new Piece(PIECES[r][0], PIECES[r][1]);
 }
 
-var arreglo = [];
+var arregloPiezas = [];
 
 function generarCargador(){
     for (let index = 0; index < 499; index++) {
-        arreglo.push(randomPiece());
+      arregloPiezas.push(randomPiece());
     }
-    //console.log(arreglo);
+    //console.log(arregloPiezas);
 }
 
 generarCargador();
 
-//TODO: CREAR un metodo que genere un arreglo de piezas aleatorias
-
-//TODO: Crear un método pila para recorrer pieza actual y pieza siguiente
-
-//TODO: Crear metdo para mostrar cual es la pieza siguiente (Incluso probar mostrar las siguientes tres).
 
 let p = randomPiece();
 
@@ -117,7 +112,11 @@ Piece.prototype.unDraw = function() {
 
 // move Down the piece
 var cont = 0;
-console.log(arreglo);
+let nxtPieceToDraw = arregloPiezas[1];
+console.log(arregloPiezas);
+
+console.log(nxtPieceToDraw);
+
 Piece.prototype.moveDown = function() {
   if (!this.collision(0, 1, this.activeTetromino)) {
     this.unDraw();
@@ -128,9 +127,18 @@ Piece.prototype.moveDown = function() {
     this.lock();
     //p = randomPiece();
     cont++;
-    p = arreglo[cont];
+    let nextPieceCont = cont+1;
+    nxtPieceToDraw = arregloPiezas[nextPieceCont];
+    p = arregloPiezas[cont];
+    console.log(nxtPieceToDraw);
   }
 };
+
+
+
+function drawNextPiece(){
+  nxtPiesceToDraw.fill();
+}
 
 // move Right the piece
 Piece.prototype.moveRight = function() {

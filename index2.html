@@ -25,7 +25,7 @@
 
       .container {
         display: grid;
-        grid-template-columns: 35% 35% 10% 20%;
+        grid-template-columns: 40% 30% 30%;
       }
 
       .box {
@@ -39,14 +39,17 @@
         float: right;
       }
       .espacio {
-        padding-top: 30px;
+        padding-top: 20px;
       }
       .caja {
         border-style: solid;
       }
       .ajustarCaja {
-        width: 30%;
+        width: 13%;
+        height: 7%;
         margin: auto;
+        margin-bottom: 10px;
+        padding-top: 7px;
       }
     </style>
   </head>
@@ -54,40 +57,39 @@
     <div class="container">
       <div class="box">
         Elementos
-        <br />
-        <div class="box caja ajustarCaja">
-          Hidrogeno <br />
+        <div class="box caja ajustarCaja" style="font-size: medium;">
+          Hidrógeno <br />
           H <br />
-          MM <br />
+          1.00794 <br />
         </div>
-        <br />
-        <div class="box caja ajustarCaja">
+
+        <div class="box caja ajustarCaja" style="font-size: medium;">
           Helio <br />
           He <br />
-          MM <br />
+          4.002602 <br />
         </div>
-        <br />
-        <div class="box caja ajustarCaja">
+
+        <div class="box caja ajustarCaja" style="font-size: medium;">
           Sodio <br />
           Sd <br />
-          MM <br />
+          22.98976928 <br />
         </div>
-        <br />
-        <div class="box caja ajustarCaja">
-          Mercurio <br />
+
+        <div class="box caja ajustarCaja" style="font-size: medium;">
+          Praseodimio <br />
           Mg <br />
-          MM <br />
+          140.90765 <br />
         </div>
       </div>
 
       <canvas class="box" id="tetris" width="250" height="425"></canvas>
 
-      <div class="box" style="width: 145px; height: 145px; background-color: red;">
-          Buenas tardes, mandy.
-          <img src="https://img.favpng.com/17/24/11/the-grim-adventures-of-billy-mandy-cartoon-network-character-image-png-favpng-tUXf5zAhh0CChfXecEfnE7AdW.jpg" style="width: 100%;"alt="">
+      <div class="box espacio">
+        <div style="font-size: medium; width: 180px; height: 200px; background-color: red; margin-left: 34%;">
+          Siguiente pieza:
+        <div id="nextPiece" class="width: 80%;"> </div>
       </div>
 
-      <div class="box">
         Datos
         <div class="box espacio">
           Puntuanción:
@@ -109,7 +111,7 @@
           Puntos para siguiente Nivel:
           <div id=""></div>
         </div>
-        <div class="box e spacio">
+        <div class="box espacio">
           Puntos para siguiente Elemento:
           <div id=""></div>
         </div>
