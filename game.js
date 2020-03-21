@@ -3,13 +3,6 @@ const ctx = cvs.getContext("2d");
 const scoreElement = document.getElementById("score");
 const levelElement = document.getElementById("level");
 const nextPieceElement = document.getElementById("nextPiece");
-const contElementosElement = document.getElementById("contElementos");
-
-//TODO: Crear objeto json de elemento  (nombre y simbolo)
-//TODO: Crear arreglo de objetos elementos
-//TODO: Crear arreglos de elementos por grupo
-//TODO: Crear tarjetas de elementos
-//TODO: validar mostrar tarjetas según puntaje
 
 let currentLVL = 0;
 let nxtLvl = currentLVL+1000;
@@ -19,8 +12,17 @@ const COL = (COLUMN = 10);
 const SQ = (squareSize = 25);
 const VACANT = "WHITE"; // color of an empty square
 
-const LVL0 = 0, LVL1 = 999, LVL2 = 1999, LVL3 = 2999, LVL4 = 3999, LVL5 = 4999, LVL6 = 5999,
+const LVL1 = 999, LVL2 = 1999, LVL3 = 2999, LVL4 = 3999, LVL5 = 4999, LVL6 = 5999,
       LVL7 = 6999, LVL8 = 7999, LVL9 = 8999, LVL10 = 9999, LVL11 = 1999, LVL12 = 11999, LVL13 = 12999;
+
+const e1 = document.getElementById("e1");
+const e2 = document.getElementById("e2");
+const e3 = document.getElementById("e3");
+const e4 = document.getElementById("e4");
+const e5 = document.getElementById("e5");
+const e6 = document.getElementById("e6");
+
+let score = 0;
 
 // draw a square
 function drawSquare(x, y, color) {
@@ -33,17 +35,17 @@ function drawSquare(x, y, color) {
 
 // create the board
 let board = [];
-for (r = 0; r < ROW; r++) {
+for (let r = 0; r < ROW; r++) {
   board[r] = [];
-  for (c = 0; c < COL; c++) {
+  for (let c = 0; c < COL; c++) {
     board[r][c] = VACANT;
   }
 }
 
 // draw the board
 function drawBoard() {
-  for (r = 0; r < ROW; r++) {
-    for (c = 0; c < COL; c++) {
+  for (let r = 0; r < ROW; r++) {
+    for (let c = 0; c < COL; c++) {
       drawSquare(c, r, board[r][c]);
     }
   }
@@ -64,11 +66,11 @@ const PIECES = [
 
 // generate random pieces
 function randomPiece() {
-  let r = (randomN = Math.floor(Math.random() * PIECES.length)); // 0 -> 6
+  let r = ( Math.floor(Math.random() * PIECES.length)); // 0 -> 6
   return new Piece(PIECES[r][0], PIECES[r][1]);
 }
 
-var arregloPiezas = [];
+let arregloPiezas = [];
 
 function generarCargador(){
     for (let index = 0; index < 499; index++) {
@@ -78,7 +80,6 @@ function generarCargador(){
 }
 
 generarCargador();
-
 
 let p = randomPiece();
 
@@ -97,8 +98,8 @@ function Piece(tetromino, color) {
 
 // fill function
 Piece.prototype.fill = function(color) {
-  for (r = 0; r < this.activeTetromino.length; r++) {
-    for (c = 0; c < this.activeTetromino.length; c++) {
+  for (let r = 0; r < this.activeTetromino.length; r++) {
+    for (let c = 0; c < this.activeTetromino.length; c++) {
       // we draw only occupied squares
       if (this.activeTetromino[r][c]) {
         drawSquare(this.x + c, this.y + r, color);
@@ -118,13 +119,13 @@ Piece.prototype.unDraw = function() {
 };
 
 // move Down the piece
-var cont = 0;
+let cont = 0;
 let nxtPieceToDraw = arregloPiezas[1];
-console.log(arregloPiezas);
+//console.log(arregloPiezas);
 
 checkNextPiece();
 
-console.log(nxtPieceToDraw);
+//console.log(nxtPieceToDraw);
 
 Piece.prototype.moveDown = function() {
   if (!this.collision(0, 1, this.activeTetromino)) {
@@ -148,25 +149,25 @@ Piece.prototype.moveDown = function() {
 
 function checkNextPiece(){
   if(nxtPieceToDraw.color == '#FF0D72'){
-    console.log("Sigue Z");
+    //console.log("Sigue Z");
     nextPieceElement.innerHTML = "<img src=\"./images/z.png\">";
   } else if (nxtPieceToDraw.color == '#0DC2FF'){
-    console.log("Sigue S");
+    //console.log("Sigue S");
     nextPieceElement.innerHTML = "<img src=\"./images/s.png\">";
   } else if (nxtPieceToDraw.color == '#0DFF72'){
-    console.log("Sigue T");
+    //console.log("Sigue T");
     nextPieceElement.innerHTML = "<img src=\"./images/t.png\">";
   } else if (nxtPieceToDraw.color == '#F538FF'){
-    console.log("Sigue O");
+    //console.log("Sigue O");
     nextPieceElement.innerHTML = "<img src=\"./images/o.png\">";
   } else if (nxtPieceToDraw.color == '#FF8E0D'){
-    console.log("Sigue L");
+    //console.log("Sigue L");
     nextPieceElement.innerHTML = "<img src=\"./images/l.png\">";
   } else if (nxtPieceToDraw.color == '#FFE138'){
-    console.log("Sigue I");
+    //console.log("Sigue I");
     nextPieceElement.innerHTML = "<img src=\"./images/i.png\">";
   } else if (nxtPieceToDraw.color == '#3877FF'){
-    console.log("Sigue J");
+    //console.log("Sigue J");
     nextPieceElement.innerHTML = "<img src=\"./images/j.png\">";
   }
 }
@@ -215,18 +216,25 @@ Piece.prototype.rotate = function() {
   }
 };
 
-let score = 0;
-const alerChido = () =>
+const gameOverAlert = () =>
   Swal.fire({
-    title: "Fin del juego!",
+    title: "¡Fin del juego!",
     text: "¿Terminar partida?",
     icon: "error",
-    confirmButtonText: "¡Terminar!"
+    confirmButtonText: "¡Reintentar!"
   }).then(function() {
     window.location =
       //"file:///Applications/MAMP/htdocs/SimpleTetris/index2.html";
       "file:///C:/wamp64/www/SimpleTetris/index2.html";
   });
+
+const gameAlert = () =>
+    Swal.fire({
+        title: '¡Lo lograste!',
+        text: '¡Encontraste todos los elementos!',
+        icon: 'success',
+        confirmButtonText: "Volver al menú"
+    });
 
 Piece.prototype.lock = function() {
   for (r = 0; r < this.activeTetromino.length; r++) {
@@ -238,7 +246,7 @@ Piece.prototype.lock = function() {
       // pieces to lock on top = game over
       if (this.y + r < 0) {
         //alert("Game Over");
-        alerChido();
+        gameOverAlert();
         // stop request animation frame
         gameOver = true;
         break;
@@ -248,9 +256,9 @@ Piece.prototype.lock = function() {
     }
   }
   // remove full rows
-  for (r = 0; r < ROW; r++) {
+  for (let r = 0; r < ROW; r++) {
     let isRowFull = true;
-    for (c = 0; c < COL; c++) {
+    for (let c = 0; c < COL; c++) {
       isRowFull = isRowFull && board[r][c] != VACANT;
     }
     if (isRowFull) {
@@ -357,6 +365,7 @@ function drop() {
       levelElement.innerHTML = 1;
       currentLVL = 1;
       nxtLvl = LVL2;
+      e1.style.display = "block";
     }
   } else if (score >= LVL2 && score < LVL3) {
     if (delta > 450) {
@@ -372,7 +381,7 @@ function drop() {
       dropStart = Date.now();
       levelElement.innerHTML = 3;
       currentLVL = 3;
-      nxtLvl = LVL4;
+      e2.style.display = "block";
     }
   } else if (score >= LVL4 && score < LVL5) {
     if (delta > 410) {
@@ -389,6 +398,7 @@ function drop() {
       levelElement.innerHTML = 5;
       currentLVL = 5;
       nxtLvl = LVL6;
+      e3.style.display = "block";
     }
   } else if (score >= LVL6 && score < LVL7) {
     if (delta > 390) {
@@ -397,6 +407,7 @@ function drop() {
       levelElement.innerHTML = 6;
       currentLVL = 6;
       nxtLvl = LVL7;
+      e4.style.display = "block";
     }
   } else if (score >= LVL7 && score < LVL8) {
     if (delta > 380) {
@@ -437,6 +448,7 @@ function drop() {
       levelElement.innerHTML = 11;
       currentLVL = 11;
       nxtLvl = LVL12;
+      e5.style.display = "block";
     }
   } else if (score >= LVL12 && score < LVL13) {
     if (delta > 330) {
@@ -445,6 +457,7 @@ function drop() {
       levelElement.innerHTML = 12;
       currentLVL = 12;
       nxtLvl = LVL13;
+      e5.style.display = "block";
     }
   } else if (score >= LVL13) {
     if (delta > 320) {
@@ -452,6 +465,9 @@ function drop() {
       dropStart = Date.now();
       levelElement.innerHTML = 13;
       currentLVL = 13;
+      e6.style.display = "block";
+      gameAlert();
+      gameOver = true;
     }
   }
 

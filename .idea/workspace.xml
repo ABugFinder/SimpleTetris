@@ -3,8 +3,11 @@
   <component name="ChangeListManager">
     <list default="true" id="dfd15215-6f6b-4caa-9131-9c65fafacba8" name="Default Changelist" comment="">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/index.html" beforeDir="false" />
       <change beforePath="$PROJECT_DIR$/index2.html" beforeDir="false" afterPath="$PROJECT_DIR$/index2.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/tetris2.js" beforeDir="false" afterPath="$PROJECT_DIR$/tetris2.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/newTetris.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/tetris.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/tetris2.js" beforeDir="false" afterPath="$PROJECT_DIR$/game.js" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -45,7 +48,8 @@
       <updated>1583192403716</updated>
       <workItem from="1583192407902" duration="9543000" />
       <workItem from="1583249546413" duration="57000" />
-      <workItem from="1584310345450" duration="16584000" />
+      <workItem from="1584310345450" duration="16736000" />
+      <workItem from="1584724365375" duration="12241000" />
     </task>
     <servers />
   </component>
@@ -53,9 +57,17 @@
     <option name="version" value="1" />
   </component>
   <component name="WindowStateProjectService">
+    <state x="690" y="286" key="#com.intellij.refactoring.safeDelete.UnsafeUsagesDialog" timestamp="1584753300823">
+      <screen x="0" y="0" width="1920" height="1080" />
+    </state>
+    <state x="690" y="286" key="#com.intellij.refactoring.safeDelete.UnsafeUsagesDialog/0.0.1920.1080/1920.0.1920.1080@0.0.1920.1080" timestamp="1584753300823" />
     <state x="764" y="260" key="SettingsEditor" timestamp="1583192542903">
       <screen x="0" y="0" width="1920" height="1080" />
     </state>
     <state x="764" y="260" key="SettingsEditor/0.0.1920.1080/1920.0.1920.1080/3840.0.1920.1080@0.0.1920.1080" timestamp="1583192542903" />
+    <state x="656" y="363" key="com.intellij.ide.util.TipDialog" timestamp="1584724365059">
+      <screen x="0" y="0" width="1920" height="1080" />
+    </state>
+    <state x="656" y="363" key="com.intellij.ide.util.TipDialog/0.0.1920.1080/1920.0.1920.1080@0.0.1920.1080" timestamp="1584724365059" />
   </component>
 </project>

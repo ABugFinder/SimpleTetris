@@ -3,80 +3,45 @@
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="stylesheet" type="text/css" href="style.css">
     <title>Tetris Game JS</title>
-    <style>
-      #score {
-        display: inline-block;
-      }
-      #level {
-        display: inline-block;
-      }
-      body {
-        background: #9f9fb1;
-        color: #000;
-        font-family: sans-serif;
-        font-size: 2em;
-        text-align: center;
-      }
-      canvas {
-        border: solid 0.1em #fff;
-        height: 90vh;
-      }
-
-      .container {
-        display: grid;
-        grid-template-columns: 40% 30% 30%;
-      }
-
-      .box {
-        text-align: center;
-        color: aliceblue;
-      }
-      .posLeft {
-        float: left;
-      }
-      .posRight {
-        float: right;
-      }
-      .espacio {
-        padding-top: 20px;
-      }
-      .caja {
-        border-style: solid;
-      }
-      .ajustarCaja {
-        width: 13%;
-        height: 7%;
-        margin: auto;
-        margin-bottom: 10px;
-        padding-top: 7px;
-      }
-    </style>
   </head>
   <body>
     <div class="container">
       <div class="box">
         Elementos
-        <div class="box caja ajustarCaja" style="font-size: medium;">
-          Hidrógeno <br />
-          H <br />
-          1.00794 <br />
-        </div>
-
-        <div class="box caja ajustarCaja" style="font-size: medium;">
+        <div id ="e1" class="box caja ajustarCaja" style="font-size: medium; display: none;">
           Helio <br />
           He <br />
-          4.002602 <br />
+          4.0026 <br />
         </div>
 
-        <div class="box caja ajustarCaja" style="font-size: medium;">
-          Sodio <br />
-          Sd <br />
-          22.98976928 <br />
+        <div id ="e2" class="box caja ajustarCaja" style="font-size: medium; display: none;">
+          Neón <br />
+          Ne <br />
+          20.180 <br />
         </div>
 
-        <div class="box caja ajustarCaja" style="font-size: medium;">
-          Praseodimio <br />
+        <div id ="e3" class="box caja ajustarCaja" style="font-size: medium; display: none;">
+          Argón <br />
+          Ar <br />
+          39.948 <br />
+        </div>
+
+        <div id ="e4" class="box caja ajustarCaja" style="font-size: medium; display: none;">
+          Kriptón <br />
+          Kr <br />
+          83.798 <br />
+        </div>
+
+        <div id ="e5" class="box caja ajustarCaja" style="font-size: medium; display: none;">
+          Xenón <br />
+          Xe <br />
+          131.29 <br />
+        </div>
+
+        <div id ="e6" class="box caja ajustarCaja" style="font-size: medium; display: none;">
+          Radón <br />
           Mg <br />
           140.90765 <br />
         </div>
@@ -117,9 +82,9 @@
     </div>
 
     <script src="tetrominoes.js"></script>
-    <script src="tetris2.js"></script>
+    <script src="game.js"></script>
     <script src="https://cdn.jsdelivr.net/npm/sweetalert2@9"></script>
-    <script src="sweetalert2.all.min.js"></script>
+    <!-- <script src="sweetalert2.all.min.js"></script> -->
     <!-- Optional: include a polyfill for ES6 Promises for IE11 -->
     <script src="https://cdn.jsdelivr.net/npm/promise-polyfill"></script>
   </body>
